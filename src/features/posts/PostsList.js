@@ -1,18 +1,10 @@
-import { useSelector, useDispatch } from "react-redux";
-import {
-  selectAllPosts,
-  getPostsError,
-  getPostsStatus,
-  fetchPosts,
-} from "./postsSlice";
+import { useSelector } from "react-redux";
+import { selectAllPosts, getPostsError, getPostsStatus } from "./postsSlice";
 import React from "react";
 
-import { useEffect } from "react";
 import PostsExcerpt from "./PostsExcerpt";
-import { useRef } from "react";
 
 const PostsList = () => {
-  const effectRan = useRef(false);
   const posts = useSelector(selectAllPosts);
   const postsStatus = useSelector(getPostsStatus);
   const postsError = useSelector(getPostsError);
